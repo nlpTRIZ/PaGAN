@@ -1,4 +1,5 @@
 pytorch-transformers
 transformers
 tensorboard
+nlpaug
 
