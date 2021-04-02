@@ -2,7 +2,7 @@
 This code is for the reviewers of KR 2021 submission PaGAN: Generative Adversarial Network for Patent understanding
 
 ## Install dependencies
-Install dependencies using ```bash install_dependencies.sh```
+Install dependencies using ```bash install_dependencies.sh``` in https://hub.docker.com/layers/pytorch/pytorch/1.6.0-cuda10.1-cudnn7-devel/images/sha256-ccebb46f954b1d32a4700aaeae0e24bd68653f92c6f276a608bf592b660b63d7?context=explore .
 
 Download Standford-core-nlp for tokenization here https://drive.google.com/file/d/1HS8fq67q9o-mnx4U-JICBIbH7xwsIZeq/view?usp=sharing and place it in src/preproccessing
 
