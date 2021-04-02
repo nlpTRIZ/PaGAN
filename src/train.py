@@ -153,7 +153,8 @@ if __name__ == '__main__':
     args = parser.parse_args()
 
     init_logger(args.log_file)
-    os.environ["CUDA_VISIBLE_DEVICES"] = args.visible_gpus if args.visible_gpus != '-1':
+    if args.visible_gpus != '-1':
+        os.environ["CUDA_VISIBLE_DEVICES"] = args.visible_gpus 
     if args.parallel_computing:
         args.visible_gpus='0'
     device_id=-1 if args.visible_gpus == '-1' else [int(id_gpu) for id_gpu in args.visible_gpus.split(',')]
