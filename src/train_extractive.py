@@ -22,7 +22,12 @@ from others.logging import logger, init_logger
 model_flags = ['hidden_size', 'ff_size', 'heads', 'inter_layers', 'encoder', 'ff_actv', 'use_interval', 'rnn_size']
 
 def test_ext(args, device_id, pt, step):
-    device = "cpu" if args.visible_gpus == '-1' else "cuda:0"
+    if device_id == -1:
+        device = "cpu"
+    else:
+        device = "cuda"
+    logger.info('Device ID %s' %','.join(map(str, device_id)))
+    logger.info('Device %s' % device)
     if (pt != ''):
         test_from = pt
     else:
