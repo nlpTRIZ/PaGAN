@@ -15,7 +15,6 @@ import torch
 from others.logging import init_logger
 from train_extractive import train_ext, test_ext
 from preprocess import Preprocessor
-from load_patents import load_patents
 
 os.environ["CLASSPATH"] = "./preprocessing/stanford-corenlp-full-2018-10-05/stanford-corenlp-3.9.2.jar"
 
@@ -182,9 +181,6 @@ if __name__ == '__main__':
         args.coeff_model_losses[1]=0
         args.coeff_model_losses[4]=0
 
-    if args.random_test_patents:
-        load_patents(args.random_test_patents)
-        args.need_preprocessing=True
     if args.need_preprocessing:
         Preprocesseur=Preprocessor(args)
         Preprocesseur.tokenize()
