@@ -1,7 +1,7 @@
 # PaGAN
 This code is for the reviewers of KR 2021 submission PaGAN: Generative Adversarial Network for Patent understanding
 
-# Install dependencies
+## Install dependencies
 Install dependencies using ```bash install_dependencies.sh```
 
 Download Standford-core-nlp for tokenization here https://drive.google.com/file/d/1HS8fq67q9o-mnx4U-JICBIbH7xwsIZeq/view?usp=sharing and place it in src/preproccessing
@@ -14,7 +14,7 @@ You have to rerun code after first download of resources.
 
 For multi-gpu mode you may have to modify line 689 of modeling_bert.py file from pytorch_transformers library from    *extended_attention_mask = extended_attention_mask.to(dtype=next(self.parameters()).dtype)*   to    *extended_attention_mask = extended_attention_mask.float()* to make it work.
 
-# Download data
+## Download data
 Download contradictions_dataset https://drive.google.com/file/d/1cy3fSMyfIEjOrj2XpVOv2jOosKryai-1/view?usp=sharing and unlabelled_patents https://drive.google.com/file/d/1So98t1hk-gSEbQWr-nns8MXJN1z-n6No/view?usp=sharing and unzip in data_patents/input_data/training_data.
 
 ## Train mode // Patents
