@@ -27,10 +27,6 @@ def str2bool(v):
     else:
         raise argparse.ArgumentTypeError('Boolean value expected.')
 
-# Saved models dict
-models_dict={"separate":{"classifier":['MLP','MLP'],
-                 "model":'../models/model_step_1_loss_0.167961.pt'}}
-
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
@@ -157,7 +153,7 @@ if __name__ == '__main__':
     args = parser.parse_args()
 
     init_logger(args.log_file)
-    os.environ["CUDA_VISIBLE_DEVICES"] = args.visible_gpus
+    os.environ["CUDA_VISIBLE_DEVICES"] = args.visible_gpus if args.visible_gpus != '-1'
     if args.parallel_computing:
         args.visible_gpus='0'
     device_id=-1 if args.visible_gpus == '-1' else [int(id_gpu) for id_gpu in args.visible_gpus.split(',')]
