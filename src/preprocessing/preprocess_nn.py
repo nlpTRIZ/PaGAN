@@ -9,7 +9,6 @@ import os
 import re
 import subprocess
 import time
-import matplotlib.pyplot as plt
 import numpy as np
 from os.path import join as pjoin
 
