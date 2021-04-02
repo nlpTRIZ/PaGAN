@@ -6,8 +6,6 @@ Install dependencies using ```bash install_dependencies.sh```
 
 Download Standford-core-nlp for tokenization here https://drive.google.com/file/d/1HS8fq67q9o-mnx4U-JICBIbH7xwsIZeq/view?usp=sharing and place it in src/preproccessing
 
-# BERT_summary
-
 **Important**: For encoding a text longer than 512 tokens, for example 1500. Set max_pos to 1500 during both preprocessing and training.
 
 Codes are borrowed from PreSumm (https://github.com/nlpyang/PreSumm.git) and ONMT(https://github.com/OpenNMT/OpenNMT-py).
