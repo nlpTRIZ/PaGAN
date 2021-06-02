@@ -1,5 +1,5 @@
 # PaGAN
-This code is for the reviewers of KR 2021 submission PaGAN: Generative Adversarial Network for Patent understanding
+This code is for the reviewers of ICDM 2021 submission PaGAN: Generative Adversarial Network for Patent understanding
 
 ## Install dependencies
 Install dependencies using ```bash install_dependencies.sh``` in https://hub.docker.com/layers/pytorch/pytorch/1.6.0-cuda10.1-cudnn7-devel/images/sha256-ccebb46f954b1d32a4700aaeae0e24bd68653f92c6f276a608bf592b660b63d7?context=explore .
@@ -8,14 +8,15 @@ Download Standford-core-nlp for tokenization here https://drive.google.com/file/
 
 **Important**: For encoding a text longer than 512 tokens, for example 1500. Set max_pos to 1500 during both preprocessing and training.
 
-Codes are borrowed from PreSumm (https://github.com/nlpyang/PreSumm.git) and ONMT(https://github.com/OpenNMT/OpenNMT-py).
-
 You have to rerun code after first download of resources.
 
 For multi-gpu mode you may have to modify line 689 of modeling_bert.py file from pytorch_transformers library from    *extended_attention_mask = extended_attention_mask.to(dtype=next(self.parameters()).dtype)*   to    *extended_attention_mask = extended_attention_mask.float()* to make it work.
 
 ## Download data
 Download contradictions_dataset https://drive.google.com/file/d/1cy3fSMyfIEjOrj2XpVOv2jOosKryai-1/view?usp=sharing and unlabelled_patents https://drive.google.com/file/d/1So98t1hk-gSEbQWr-nns8MXJN1z-n6No/view?usp=sharing and unzip in data_patents/input_data/training_data.
+
+## Pretrained model
+https://drive.google.com/file/d/1-UyBnNsbagHJLEA9AJoUM1cWHOXWCn16/view?usp=sharing (to be placed in models directory)
 
 ## Train mode // Patents
 
@@ -33,7 +34,7 @@ Use -num_split to indicate index of fold in k-fold cross-validation.
 
 *Preprocess*:
 ```
-python3 train.py -mode train -parts_of_interest 'STATE_OF_THE_ART' -max_pos 1500 -need_preprocessing True -dataset 'train' 'valid' -real_ratio 1 -num_split 1 -only_preprocessing True
+python3 train.py -mode train -parts_of_interest 'STATE_OF_THE_ART' -max_pos 1500 -need_preprocessing True -dataset 'train' 'valid' -real_ratio 0.9 -num_split 1 -only_preprocessing True
 ```
 Use -parts_of_interest option to set parts of the patents to be preprocessed.
 
@@ -50,7 +51,7 @@ Use -baseline to reproduce baseline results ('SummaTRIZ' or 'baseline').
 python3 train.py -mode train -parts_of_interest 'STATE_OF_THE_ART' -lr 1e-5 -visible_gpus 0,1,2,3 -train_steps 5 -max_pos 1500 -finetune_bert True -need_preprocessing False -classification 'separate' -g_learning_rate 1e-5 -batch_size 4 -test_batch_size 40 -generator LSTM_sent -doc_classifier FC -dataset 'train' 'valid' -real_ratio 0.9 -num_split 1 -evaluate_x_steps 20
 ```
 
-*To reproduce results*:
+**To reproduce results**:
 ```
 bash evaluate.sh
 ```
@@ -72,6 +73,3 @@ Use -test_threshold option to set the minimum probability of summary sentences
 
 
 Test generates a csv file in ../results with list of dictionnary containing summary sentences, their probability, patents' reference etc...
-
-
-Pretrained model: https://drive.google.com/file/d/1-UyBnNsbagHJLEA9AJoUM1cWHOXWCn16/view?usp=sharing (you should put it in models directory)
