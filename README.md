@@ -15,8 +15,9 @@ For multi-gpu mode you may have to modify line 689 of modeling_bert.py file from
 ## Download data
 Download contradictions_dataset https://drive.google.com/file/d/1cy3fSMyfIEjOrj2XpVOv2jOosKryai-1/view?usp=sharing and unlabelled_patents https://drive.google.com/file/d/1So98t1hk-gSEbQWr-nns8MXJN1z-n6No/view?usp=sharing and unzip in data_patents/input_data/training_data.
 
-## Pretrained model (with num_split=1)
+## Pretrained model 
 https://drive.google.com/file/d/1-UyBnNsbagHJLEA9AJoUM1cWHOXWCn16/view?usp=sharing (to be placed in models directory)
+This model was trained with_split=1 (see explanations for preprocessing part)
 
 ## Train mode // Patents
 
