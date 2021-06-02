@@ -17,6 +17,7 @@ Download contradictions_dataset https://drive.google.com/file/d/1cy3fSMyfIEjOrj2
 
 ## Pretrained model 
 https://drive.google.com/file/d/1-UyBnNsbagHJLEA9AJoUM1cWHOXWCn16/view?usp=sharing (to be placed in models directory)
+
 This model was trained with_split=1 (see explanations for preprocessing part)
 
 ## Train mode // Patents
