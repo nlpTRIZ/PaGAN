@@ -21,8 +21,8 @@ https://drive.google.com/file/d/1-UyBnNsbagHJLEA9AJoUM1cWHOXWCn16/view?usp=shari
 This model was trained with num_split=1 (see explanations for preprocessing part)
 
 ## Train mode // Patents
-
-Set visibles_gpus to -1 if no gpu available.
+Download Transfer Learning model here https://drive.google.com/file/d/1YIo8pp9JCe_4azKVJYVNqxXhOyyYDnnR/view?usp=sharing (to be placed in models directory)
+Set visible_gpus to -1 if no gpu available.
 
 **Preprocessing only from patents directories**
 
