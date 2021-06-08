@@ -2,15 +2,13 @@
 This code is for the reviewers of ICDM 2021 submission PaGAN: Generative Adversarial Network for Patent understanding
 
 ## Install dependencies
-Install dependencies using ```bash install_dependencies.sh``` in https://hub.docker.com/layers/pytorch/pytorch/1.6.0-cuda10.1-cudnn7-devel/images/sha256-ccebb46f954b1d32a4700aaeae0e24bd68653f92c6f276a608bf592b660b63d7?context=explore .
+*Install dependencies using ```bash install_dependencies.sh``` in https://hub.docker.com/layers/pytorch/pytorch/1.6.0-cuda10.1-cudnn7-devel/images/sha256-ccebb46f954b1d32a4700aaeae0e24bd68653f92c6f276a608bf592b660b63d7?context=explore .
 
-Download Standford-core-nlp for tokenization here https://drive.google.com/file/d/1HS8fq67q9o-mnx4U-JICBIbH7xwsIZeq/view?usp=sharing and place it in src/preproccessing
+*Download Standford-core-nlp for tokenization here https://drive.google.com/file/d/1HS8fq67q9o-mnx4U-JICBIbH7xwsIZeq/view?usp=sharing and place it in src/preproccessing
 
-**Important**: For encoding a text longer than 512 tokens, for example 1500. Set max_pos to 1500 during both preprocessing and training.
+*You have to rerun code after first download of resources.
 
-You have to rerun code after first download of resources.
-
-For multi-gpu mode you may have to modify line 689 of modeling_bert.py file from pytorch_transformers library from    *extended_attention_mask = extended_attention_mask.to(dtype=next(self.parameters()).dtype)*   to    *extended_attention_mask = extended_attention_mask.float()* to make it work.
+*For multi-gpu mode you may have to modify line 689 of modeling_bert.py file from pytorch_transformers library from    *extended_attention_mask = extended_attention_mask.to(dtype=next(self.parameters()).dtype)*   to    *extended_attention_mask = extended_attention_mask.float()* to make it work.
 
 ## Download data
 Download contradictions_dataset https://drive.google.com/file/d/1cy3fSMyfIEjOrj2XpVOv2jOosKryai-1/view?usp=sharing and unlabelled_patents https://drive.google.com/file/d/1So98t1hk-gSEbQWr-nns8MXJN1z-n6No/view?usp=sharing and unzip in data_patents/input_data/training_data.
