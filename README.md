@@ -31,7 +31,7 @@ python3 sort.py -real_ratio 0.9 -num_split 1
 ```
 Use -real_ratio to indicate the percentage of labelled data.
 
-Use -num_split to indicate index of fold in k-fold cross-validation.
+Use -num_split to indicate index of fold in 4-fold cross-validation (0,1,2,3).
 
 *Preprocess*:
 ```
