@@ -23,7 +23,7 @@ Download Transfer Learning model here https://drive.google.com/file/d/1YIo8pp9JC
 
 Set visible_gpus to -1 if no gpu available.
 
-* **Preprocessing only from patents directories**
+**Preprocessing only from patents directories**
 
 *Prepare data for cross validation*:
 ```
@@ -41,18 +41,18 @@ Use -parts_of_interest option to set parts of the patents to be preprocessed.
 
 Use -dataset option to indicate which input directory will be used.
 
-* **Finetuning from pretrained model**
+**Finetuning from pretrained model**
 ```
 python3 train.py -mode train -gan_mode False -parts_of_interest 'STATE_OF_THE_ART' -lr 1e-5 -visible_gpus 0 -train_steps 5 -max_pos 1500 -finetune_bert False -need_preprocessing False -classification 'separate' -model 'bert_sum' -g_learning_rate 1e-5 -batch_size 4500 -doc_classifier LSTM -dataset 'train' 'valid' -real_ratio 0.9 -num_split 1
 ```
 Use -baseline to reproduce baseline results ('SummaTRIZ' or 'baseline').
 
-* **Adversarial Training**
+**Adversarial Training**
 ```
 python3 train.py -mode train -parts_of_interest 'STATE_OF_THE_ART' -lr 1e-5 -visible_gpus 0,1,2,3 -train_steps 5 -max_pos 1500 -finetune_bert True -need_preprocessing False -classification 'separate' -g_learning_rate 1e-5 -batch_size 4 -test_batch_size 40 -generator LSTM_sent -doc_classifier FC -dataset 'train' 'valid' -real_ratio 0.9 -num_split 1 -evaluate_x_steps 20
 ```
 
-* **To reproduce results**:
+**To reproduce results**:
 ```
 bash evaluate.sh
 ```
