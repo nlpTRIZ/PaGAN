@@ -58,6 +58,7 @@ python3 train.py -mode train -parts_of_interest 'STATE_OF_THE_ART' -lr 1e-5 -vis
 ```
 bash evaluate.sh
 ```
+*Note that the following results were obtained at the best of three trainings.*
 
 | Model 								              | Loss  	  | TP  	| FP  	| TN  	| FN  	| Accuracy 	| Precision | Recall	  | F1 score  | S 		    | S<sub>m</sub> |
 | -----  								              | ----- 	  | ----- | ----- | ----- | ----- | ----- 	  | ----- 	  | ----- 	  | ----- 	  | ----- 	  | ----- 		    |
