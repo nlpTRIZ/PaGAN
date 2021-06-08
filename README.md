@@ -59,6 +59,16 @@ python3 train.py -mode train -parts_of_interest 'STATE_OF_THE_ART' -lr 1e-5 -vis
 bash evaluate.sh
 ```
 
+Model  | Loss  | TP  | FP  | TN  | FN  | Accuracy | Precision  | Recall  | F1 score  | S | S$_m$  \\
+SummaTRIZ$_{D}$ | 0.140 | 0     | 0     | 61959 | 2276  | 0.96     | 0 | 0 | 0 | 548   | 1158 \\
+SummaTRIZ$_{TL}$ | 0.115 | 576   | 510   | 61449 | 1700  | 0.97     | 0.53     | 0.25     | 0.34     | 1119  | 1711 \\
+Baseline$_{ANN_D}$ | 0.140 | 0 | 1 | 65248 | 2276 | 0.97 | 0 | 0 | 0 | 535 | 1149   \\
+Baseline$_{ANN_{TL}}$ | 0.115 | 575 | 482 | 64767 | 1701 | 0.97 | 0.54 | 0.25 | 0.35 | 1098 | 1710 \\
+\approach$_{PROB}$ | \textbf{0.112} | 575 | 457 | 71584 | 1701 | 0.97 | 0.56 | 0.25 | 0.35 | 1168 | 1736\\
+\approach$_{ANN}$ | \textbf{0.112} | 532 | 414 | 71689 | 1744 | 0.97 | 0.56 | 0.23 | 0.33 | \textbf{1187} | \textbf{1760} \\
+\approach$_{LSTM}$ | \textbf{0.112} | 509 | 368 | 71704 | 1767 | 0.97 | \textbf{0.58} | 0.22 | 0.32 | 1186 | 1752 \\
+\approach$_{TF}$ | 0.113 | 649 | 592 | 71438 | 1627 | 0.97 | 0.52 | \textbf{0.29} | \textbf{0.37} | 1143 | 1759 \\
+
 ## Test mode // Patents
 From directory '../data_patents/input_data/test_data/' or other by changing option -input_directory:
 ```
