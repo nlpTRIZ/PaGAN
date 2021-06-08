@@ -62,6 +62,7 @@ bash evaluate.sh
 
 
 > Follow your heart.
+
 | Model 								              | Loss  	  | TP  	| FP  	| TN  	| FN  	| Accuracy 	| Precision | Recall	  | F1 score  | S 		    | S<sub>m</sub> |
 | -----  								              | ----- 	  | ----- | ----- | ----- | ----- | ----- 	  | ----- 	  | ----- 	  | ----- 	  | ----- 	  | ----- 		    |
 | SummaTRIZ<sub>D</sub> 				      | 0.140 	  | 0     | 0     | 61959 | 2276  | 0.96     	| 0 		    | 0 		    | 0 		    | 548   	  | 1158 			    |
