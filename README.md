@@ -61,7 +61,7 @@ bash evaluate.sh
 *Note that the following results were obtained at the best of three trainings.*
 
 
-> Follow your heart.
+> Sentence classification 1 (with LSTM generator)
 
 | Model 								              | Loss  	  | TP  	| FP  	| TN  	| FN  	| Accuracy 	| Precision | Recall	  | F1 score  | S 		    | S<sub>m</sub> |
 | -----  								              | ----- 	  | ----- | ----- | ----- | ----- | ----- 	  | ----- 	  | ----- 	  | ----- 	  | ----- 	  | ----- 		    |
@@ -74,6 +74,9 @@ bash evaluate.sh
 | PaGAN<sub>LSTM</sub> 				        | **0.112** | 509 	| 368 	| 71704 | 1767 	| 0.97 		  | **0.58** 	| 0.22 		  | 0.32 		  | 1186 		  | 1752 			    |
 | PaGAN<sub>TF</sub> 					        | 0.113 	  | 649 	| 592 	| 71438 | 1627 	| 0.97 		  | 0.52 		  | **0.29** 	| **0.37** 	| 1143 		  | 1759 			    |
 
+
+> Sentence classification 2 (with LSTM generator)
+
 | Model 								              | Loss  	  | TP  	| FP  	| TN  	| FN  	| Accuracy 	| Precision | Recall	  | F1 score  | S 		    | S<sub>m</sub> |
 | -----  								              | ----- 	  | ----- | ----- | ----- | ----- | ----- 	  | ----- 	  | ----- 	  | ----- 	  | ----- 	  | ----- 		    |
 | SummaTRIZ<sub>D</sub>               | 0.171     | 0     | 0     | 60526 | 3709  | 0.94      | 0         | 0         | 0         | 1750      | 2692          |
@@ -84,6 +87,9 @@ bash evaluate.sh
 | PaGAN<sub>ANN</sub>                 | 0.120     | 2288  | 1119  | 69551 | 1421  | **0.97**  | 0.67      | 0.62      | 0.64      | 2626      | 3206          |
 | PaGAN<sub>LSTM</sub>                | **0.118** | 2323  | 1156  | 69483 | 1386  | **0.97**  | 0.67      | **0.63**  | **0.65**  | **2645**  | 3213          |
 | PaGAN<sub>TF</sub>                  | 0.121     | 2327  | 1228  | 69369 | 1382  | 0.96      | 0.65      | **0.63**  | 0.64      | 2631      | 3220          |
+
+
+> Document classification (with LSTM generator)
 
 | Model 								              | Loss  	  | TP  	| FP  	| TN  	| FN  	| Accuracy 	| Precision | Recall	  | F1 score  | S 		    | S<sub>m</sub> |
 | -----  								              | ----- 	  | ----- | ----- | ----- | ----- | ----- 	  | ----- 	  | ----- 	  | ----- 	  | ----- 	  | ----- 		    |
@@ -96,6 +102,9 @@ bash evaluate.sh
 | PaGAN<sub>LSTM</sub>                | 0.481     | 1370  | 507   | 1093  | 230   | 0.77      | 0.73      | **0.86**  | 0.79      | 654       | 567           |
 | PaGAN<sub>TF</sub>                  | 0.467     | 1345  | 427   | 1173  | 255   | **0.79**  | **0.76**  | 0.84      | **0.80**  | 648       | 552           |
 
+
+> Sentence classification 1 (with ANN document classifier)
+
 | Setup Generator     | Loss      | TP    | FP    | TN    | FN    | Acc.    | Pre.      | Recall    | F1 score  | CO<sub>Found</sub>  | CO<sub>valid</sub>  |
 | -----  						  | ----- 	  | ----- | ----- | ----- | ----- | ----- 	| ----- 	  | ----- 	  | ----- 	  | ----- 	            | ----- 		          |
 | LSTM<sub>S          | 0.112     | 532   | 414   | 71689 | 1744  | 0.97    | 0.56      | 0.23      | 0.33      | **1187**            | **1760**            |
@@ -106,6 +115,9 @@ bash evaluate.sh
 | LSTM<sub>D</sub>    | 0.112     | 462   | 326   | 71771 | 1814  | 0.97    | 0.59      | 0.20      | 0.30      | 1168                | 1736                |
 | TF<sub>D</sub>      | **0.111** | 537   | 387   | 71730 | 1739  | 0.97    | 0.58      | 0.24      | **0.34**  | 1182                | 1759                |
 
+
+> Sentence classification 2 (with ANN document classifier)
+
 | Setup Generator     | Loss      | TP    | FP    | TN    | FN    | Acc.    | Pre.      | Recall    | F1 score  | CO<sub>Found</sub>  | CO<sub>valid</sub>  |
 | -----  							| ----- 	  | ----- | ----- | ----- | ----- | ----- 	| ----- 	  | ----- 	  | ----- 	  | ----- 	            | ----- 		          |
 | LSTM<sub>S          | 0.120     | 2288  | 1119  | 69551 | 1421  | 0.97    | 0.67      | **0.62**  | **0.64**  | 2626                | 3206                |
@@ -115,6 +127,9 @@ bash evaluate.sh
 | TF<sub>ALL</sub>    | 0.129     | 1593  | 587   | 70013 | 2116  | 0.96    | **0.73**  | 0.43      | 0.54      | 2598                | 3185                |
 | LSTM<sub>D</sub>    | **0.118** | 1960  | 773   | 69891 | 1749  | 0.97    | 0.72      | 0.53      | 0.61      | **2663**            | **3245**            |
 | TF<sub>D</sub>      | **0.118** | 2269  | 1060  | 69624 | 1440  | 0.97    | 0.68      | 0.61      | **0.64**  | 2637                | 3231                |
+
+  
+> Document classification (with ANN document classifier)
 
 | Setup Generator     | Loss      | TP    | FP    | TN    | FN    | Acc.    | Pre.      | Recall    | F1 score  | CO<sub>Found</sub>  | CO<sub>valid</sub>  |
 | -----  							| ----- 	  | ----- | ----- | ----- | ----- | ----- 	| ----- 	  | ----- 	  | ----- 	  | ----- 	            | ----- 		          |
