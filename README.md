@@ -23,7 +23,9 @@ The patents were labeled by a team of human experts. The inter-expert variabilit
 The annotation's policy consists of extracting only one contradiction per patent. If there are several, only the most important one is retained. For each part of a contradiction, all similar sentences (i.e. containing the parameters of the contradiction) are annotated. Thus, in a patent, several possible pairs of sentences can describe the contradiction.
 
 **Example of contradiction from patent US6938300B2:**
+
 **First part of contradiction**: When the stroller 1 moves over a lawn or uneven road surfaces, it is necessary for the stroller wheels to have a large diameter so as to ensure the comfort of the baby. 
+
 **Second part of contradiction**: However, if each of the front wheel assemblies 11 has two large-diameter front wheels 13, the total volume and weight of the stroller 1 will increase significantly so that it is difficult to push the stroller 1.
 
 ## Pretrained model 
