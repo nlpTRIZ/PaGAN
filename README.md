@@ -13,7 +13,7 @@ This code is for ICDM 2021 paper: **PaGAN: Generative Adversarial Network for Pa
 ## Download data
 Download contradictions_dataset https://drive.google.com/file/d/1cy3fSMyfIEjOrj2XpVOv2jOosKryai-1/view?usp=sharing and unlabelled_patents https://drive.google.com/file/d/1So98t1hk-gSEbQWr-nns8MXJN1z-n6No/view?usp=sharing and unzip in data_patents/input_data/training_data.
 
-# Details on the dataset and labeling process
+### Details on the dataset and labeling process
 State-of-the-art parts of patents from the United States Patent and Trademark Office (USPTO) are used. The dataset contains 1600 states of the art with at least one contradiction and 1600 states of the art without. The length of the patent states of the art is variable but often less than 1500 tokens.
 
 A sentence-level analysis was performed, a contradiction is therefore a pair of sentences containing the parameters forming a contradiction. The sentences of the state of the art can thus belong to 3 different classes. The sentences belonging to the class **first part of contradiction** contain the improved parameter. The class **second part of contradiction** gathers the sentences that contain the degraded parameter when the parameter from the **first part of contradiction** is improved. Finally, a reject class is used to indicate that a sentence does not contain any contradiction information.
