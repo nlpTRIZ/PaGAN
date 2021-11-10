@@ -13,6 +13,19 @@ This code is for ICDM 2021 paper: **PaGAN: Generative Adversarial Network for Pa
 ## Download data
 Download contradictions_dataset https://drive.google.com/file/d/1cy3fSMyfIEjOrj2XpVOv2jOosKryai-1/view?usp=sharing and unlabelled_patents https://drive.google.com/file/d/1So98t1hk-gSEbQWr-nns8MXJN1z-n6No/view?usp=sharing and unzip in data_patents/input_data/training_data.
 
+# Details on the dataset and labeling process
+State-of-the-art parts of patents from the United States Patent and Trademark Office (USPTO) are used. The dataset contains 1600 states of the art with at least one contradiction and 1600 states of the art without. The length of the patent states of the art is variable but often less than 1500 tokens.
+
+A sentence-level analysis was performed, a contradiction is therefore a pair of sentences containing the parameters forming a contradiction. The sentences of the state of the art can thus belong to 3 different classes. The sentences belonging to the class **first part of contradiction** contain the improved parameter. The class **second part of contradiction** gathers the sentences that contain the degraded parameter when the parameter from the **first part of contradiction** is improved. Finally, a reject class is used to indicate that a sentence does not contain any contradiction information.
+
+The patents were labeled by a team of human experts. The inter-expert variability was reduced with an overall check of all labels by two other experts. Since a patent does not necessarily contain a contradiction, approximately 20,000 patents were analyzed to extract the 1600 patents containing contradictions.
+
+The annotation's policy consists of extracting only one contradiction per patent. If there are several, only the most important one is retained. For each part of a contradiction, all similar sentences (i.e. containing the parameters of the contradiction) are annotated. Thus, in a patent, several possible pairs of sentences can describe the contradiction.
+
+**Example of contradiction from patent US6938300B2:**
+**First part of contradiction**: When the stroller 1 moves over a lawn or uneven road surfaces, it is necessary for the stroller wheels to have a large diameter so as to ensure the comfort of the baby. 
+**Second part of contradiction**: However, if each of the front wheel assemblies 11 has two large-diameter front wheels 13, the total volume and weight of the stroller 1 will increase significantly so that it is difficult to push the stroller 1.
+
 ## Pretrained model 
 https://drive.google.com/file/d/1-UyBnNsbagHJLEA9AJoUM1cWHOXWCn16/view?usp=sharing (to be placed in models directory)
 
